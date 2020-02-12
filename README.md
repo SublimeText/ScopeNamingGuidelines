@@ -53,3 +53,19 @@ Documents may be modified and are versioned following [SemVer][].
 [Sublime Text]: https://sublimetext.com/
 [idea]: https://github.com/sublimehq/Packages/issues/1440
 [SemVer]: https://semver.org/
+
+## Copyright
+
+<p xmlns:dct="http://purl.org/dc/terms/">
+  <a rel="license"
+     href="http://creativecommons.org/publicdomain/zero/1.0/">
+    <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
+  </a>
+  <br />
+  To the extent possible under law,
+  <span rel="dct:publisher" resource="[_:publisher]">the contributors</span>
+  of this work have waived all copyright and related or neighboring
+  rights to this work.
+</p>
+
+See [LICENSE](./LICENSE) for the full text.
