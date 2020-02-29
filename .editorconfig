@@ -1,0 +1,16 @@
+root = true
+
+[*]
+charset = utf-8
+# Use .gitattributes for EOL settings
+end_of_line = unset
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Unset default indent style for Markdown and text files
+# because they use variable visual indentation
+# instead of fixed levels.
+[{*.md,*.txt,LICENSE}]
+indent_size = unset
