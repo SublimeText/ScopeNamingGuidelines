@@ -104,7 +104,7 @@ A notable exception is `source.c++`.
   Further specializations of markdown may add another scope level,
   such as `text.html.markdown.gfm` for [GitHub Flavored Markdown][GFM].
 
-GFM: https://github.github.com/gfm/
+[GFM]: https://github.github.com/gfm/
 
 ---
 
