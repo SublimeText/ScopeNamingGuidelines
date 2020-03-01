@@ -1,38 +1,53 @@
 ---
 number:
-version: 1.0.0-rfc.0
+version: 1.0.0-rfc.1
 author: FichteFoll
 pull_requests:
 first_released:
 last_modified: 2020-02-12
 ---
 
-# General Guidelines
+# Base Scope
 
-These guidelines apply to every syntax
-and syntactic construct.
+These guidelines apply to a syntax definition's base scope,
+which is applied to the entire document
+highlighted using that syntax.
+Additionally, the scope suffix,
+usually based on the base scope,
+is explained.
 
 
 ## Areas of Concern
 
 - Base Scope
 - Scope suffix
-- Embedding
 
 
 ## Rationale
 
-<!-- TODO Do we need a rationale? For this document in particular or all? -->
+To classify a document type,
+every syntax specifies a base scope name,
+which is applied to the entire document
+highlighted as that syntax.
+The base scope can be used
+to differentiate between, for example,
+(mostly) prose text documents
+and documents containing instructions (*source code*).
+
+Furthermore,
+to identify which syntax a certain token is matched from (or as),
+every scope name should use a semi-unique scope suffix
+that is appended as the last sub-scope.
 
 
 ## Guidelines
 
-### Base Scope
+## Base Scope
 
 The base scope is applied to the entire region
 lexed by a syntax definition as the very first scope.
 Usually that will be the entire file,
-but in the case of an embedded syntax
+but in the case of an embedded syntax,
 a region might have multiple stacked base scopes.
 In the context of a file, however,
 there will only be a single base scope
@@ -69,44 +84,53 @@ A notable exception is `source.c++`.
 
 <!-- TODO -->
 
-### Embedding
-
-<!-- TODO -->
-
 
 ## Examples
 
 - **Plain text** without any special syntax uses the base scope `text.plain`.
+  Since no lexing is performed for plain text,
+  no scope needs to be assigned,
+  but if there were any,
+  their suffix would be `text`.
+  *This is a special case.*
+
 - **HTML** is a text-based markup language and uses `text.html`.
   Because a lot of other markup formats are based on HTML,
   it is further specified as `text.html.basic`
   to allow targeting the base syntax specifically.
+  The suffix is `html`.
+
 - **Markdown** is a superset of HTML and uses `text.html.markdown`.
   Further specializations of markdown may add another scope level,
-  such as `text.html.markdown.gfm`.
+  such as `text.html.markdown.gfm` for [GitHub Flavored Markdown][GFM].
+
+GFM: https://github.github.com/gfm/
 
 ---
 
-For the C programming language, the base scope should be `source.c` and for certain iterations of the language, the scope can be further specialized using `source.c.99`.
-C++ is a different language and uses `source.c++`.
+- **C** uses a base scope of `source.c`.
+  For certain iterations of the language, 
+  the scope can be further specialized using `source.c.99`.
+
+- **C++** is a different language from C and uses `source.c++`.
 
 ---
 
-Php files are essentially HTML files
-with template sequences for inline code execution.
-Because of this,
-`embedding.php` is used as the base scope
-and `text.html.basic` is the next scope name
-immediately pushed onto the stack.
-Embedded Php segments,
-indicated by `<?` or `<?php`,
-use `source.php.embedded`,
-which results in the following example:
+- **Php** files are essentially HTML files
+  with template sequences for inline code execution.
+  Because of this,
+  `embedding.php` is used as the base scope
+  and `text.html.basic` is the next scope name
+  immediately pushed onto the stack.
+  Embedded Php segments,
+  indicated by `<?` or `<?php`,
+  use `source.php.embedded`,
+  which results in the following example:
 
-```php
-<? echo 'hello worlds'; ?>
-<!-- ^ embedding.php text.html.basic meta.embedded.line.php source.php.embedded … -->
-```
+  ```php
+  <? echo 'hello worlds'; ?>
+  <!-- ^ embedding.php text.html.basic meta.embedded.line.php source.php.embedded … -->
+  ```
 
 
 ## Previous Usages
@@ -116,8 +140,4 @@ None.
 
 ## Unresolved Questions
 
-- What should the opening and closing punctuation of Php tags be scoped as?
-  Should it be scoped as `source.php`?
-- Where do we mention that scope names are lower-case
-  and use hyphens to separate words?
-  What about numeric sub-scopes?
+None.
