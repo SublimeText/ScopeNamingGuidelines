@@ -1,10 +1,10 @@
 ---
 number:
-version: 1.0.0-rfc.1
+version: 1.0.0-rfc.2
 author: FichteFoll
-pull_requests:
-first_released:
-last_modified: 2020-02-12
+pull_requests: [3]
+published:
+last_modified: 2020-05-06
 ---
 
 # Base Scope
@@ -42,7 +42,7 @@ that is appended as the last sub-scope.
 
 ## Guidelines
 
-## Base Scope
+### Base Scope
 
 The base scope is applied to the entire region
 lexed by a syntax definition as the very first scope.
@@ -59,7 +59,8 @@ of the following three first-level sub-scopes:
 - `text` shall be used
   for syntaxes that contain primarily prose text,
   such as markup languages
-  and structured data formats.
+  and structured data formats
+  with a focus on text.
   Text in such syntaxes is spell-checked
   and auto completion is disabled while typing.
 
@@ -67,7 +68,7 @@ of the following three first-level sub-scopes:
   for programming languages containing
   instructions for a compiler, an interpreter, or similar.
   Text in such syntaxes usually has special meaning,
-  is not spell-checked and auto completions are enabled
+  is not spell-checked and auto completions are enabled.
 
 - `embedding` special use case for syntaxes
    that are embedded later into the file.
@@ -79,6 +80,7 @@ The second sub-scope level of the scope name
 should be based on the
 Alphanumeric representations should be preferred.
 A notable exception is `source.c++`.
+
 
 ### Scope Suffix
 
@@ -113,6 +115,9 @@ A notable exception is `source.c++`.
   the scope can be further specialized using `source.c.99`.
 
 - **C++** is a different language from C and uses `source.c++`.
+  (This is the exception, not the rule.)
+
+- **C#** is a different language from C and C++ and uses `source.cs`.
 
 ---
 
