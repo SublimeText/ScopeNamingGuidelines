@@ -82,6 +82,23 @@ Alphanumeric representations should be preferred.
 A notable exception is `source.c++`.
 
 
+#### Specialized Base Scopes
+
+When implementing syntax highlighting
+for a dialect of a different syntax,
+for example a special syntax
+for JSON documents
+or a Bash-like shell scripting language,
+a third-level scope can be introduced
+to indicate that a syntax is a specialization of the base.
+Examples include Markdown being a specialization of HTML
+or Zsh being a specialization of Bash,
+resulting in `text.html.markdown`.
+If the syntax for the base is known to be specialized,
+it may opt to use the `basic` sub-scope
+instead of simply omitting it.
+
+
 ### Scope Suffix
 
 <!-- TODO -->
@@ -111,7 +128,7 @@ A notable exception is `source.c++`.
 ---
 
 - **C** uses a base scope of `source.c`.
-  For certain iterations of the language, 
+  For certain iterations of the language,
   the scope can be further specialized using `source.c.99`.
 
 - **C++** is a different language from C and uses `source.c++`.
