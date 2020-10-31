@@ -1,6 +1,6 @@
 ---
 number:
-version: 1.0.0-rfc.2
+version: 1.0.0-rfc.3
 author: FichteFoll
 pull_requests: [3]
 published:
@@ -101,7 +101,29 @@ instead of simply omitting it.
 
 ### Scope Suffix
 
-<!-- TODO -->
+A scope suffix is used for individual tokens.
+The suffix is appended to every scope name
+that is assigned to a token,
+but there may only be one such suffix.
+
+It serves two purposes:
+
+1. It allows to differentiate between syntaxes on a token level
+   and is thus the more precise way to select a certain token only
+   because it still works when two syntaxes are combined.
+   Most importantly, it works for embedded sections
+   and allows to separate tokens of the base syntax from a specialized syntax.
+
+2. It marks the end of a scope name,
+   meaning the scope name does not have any further sub-scopes,
+   which allows for more accuracy during testing.
+
+Scope suffixes of specialized syntaxes
+either only use the last sub-scope of the base scope,
+or the base and the specialized name are joined using a hyphen,
+if it would be ambiguous otherwise.
+A single syntax definition may use different scope suffixes
+when it is a specialization or an extension of another syntax.
 
 
 ## Examples
@@ -122,6 +144,8 @@ instead of simply omitting it.
 - **Markdown** is a superset of HTML and uses `text.html.markdown`.
   Further specializations of markdown may add another scope level,
   such as `text.html.markdown.gfm` for [GitHub Flavored Markdown][GFM].
+  Depending on which syntax a token or a sequence of tokens is specified in,
+  the suffix could be either of `html`, `markdown`, or `gfm`.
 
 [GFM]: https://github.github.com/gfm/
 
