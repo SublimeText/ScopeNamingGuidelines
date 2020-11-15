@@ -1,6 +1,6 @@
 ---
 number:
-version: 1.0.0-rfc.3
+version: 1.0.0-rfc.4
 author: FichteFoll
 pull_requests: [3]
 published:
@@ -70,15 +70,15 @@ of the following three first-level sub-scopes:
   Text in such syntaxes usually has special meaning,
   is not spell-checked and auto completions are enabled.
 
-- `embedding` special use case for syntaxes
+- `embedding` is a special use case for syntaxes
    that are embedded later into the file.
    The effect of an `embedding` scope is mostly transparent
    and the text vs. source decision
    is deferred to the following scope name.
 
 The second sub-scope level of the scope name
-should be based on the
-Alphanumeric representations should be preferred.
+should be the syntax name itself
+in lower-case alphanumeric characters.
 A notable exception is `source.c++`.
 
 
@@ -104,7 +104,7 @@ instead of simply omitting it.
 A scope suffix is used for individual tokens.
 The suffix is appended to every scope name
 that is assigned to a token,
-but there may only be one such suffix.
+but there may only be a single sub-scope suffix per scope name.
 
 It serves two purposes:
 
@@ -162,13 +162,13 @@ when it is a specialization or an extension of another syntax.
 
 ---
 
-- **Php** files are essentially HTML files
+- **PHP** files are essentially HTML files
   with template sequences for inline code execution.
   Because of this,
   `embedding.php` is used as the base scope
   and `text.html.basic` is the next scope name
   immediately pushed onto the stack.
-  Embedded Php segments,
+  Embedded PHP segments,
   indicated by `<?` or `<?php`,
   use `source.php.embedded`,
   which results in the following example:
