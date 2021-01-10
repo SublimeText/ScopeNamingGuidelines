@@ -70,12 +70,6 @@ of the following three first-level sub-scopes:
   Text in such syntaxes usually has special meaning,
   is not spell-checked and auto completions are enabled.
 
-- `embedding` is a special use case for syntaxes
-   that are embedded later into the file.
-   The effect of an `embedding` scope is mostly transparent
-   and the text vs. source decision
-   is deferred to the following scope name.
-
 The second sub-scope level of the scope name
 should be the syntax name itself
 in lower-case alphanumeric characters.
