@@ -1,10 +1,10 @@
 ---
-number:
-version: 1.0.0-rfc.4
+number: 1
+version: 1.0.0
 author: FichteFoll
 pull_requests: [3]
-published:
-last_modified: 2020-05-06
+published: 2021-01-10
+last_modified: 2020-11-15
 ---
 
 # Base Scope

@@ -7,6 +7,10 @@ for [Sublime Text][].
 
 **Currently a work in progress.**
 
+## Documents
+
+1. [Base Scope](./documents/001-base-scope.md)
+
 
 ## Motivation
 
